@@ -1,4 +1,5 @@
 import { WOW } from "wowjs";
+import 'smoothscroll-for-websites';
 // import "slick-carousel";
 // import $ from "jquery";
 
@@ -14,18 +15,18 @@ wow.init();
 	});
 	
 	// Sticky Menu
-	$(window).scroll(function () {
-		var height = $('.top-header').innerHeight();
-		if ($('header').offset().top > 10) {
-			$('.top-header').addClass('hide');
-			$('.navigation').addClass('nav-bg');
-			$('.navigation').css('margin-top', '-' + height + 'px');
-		} else {
-			$('.top-header').removeClass('hide');
-			$('.navigation').removeClass('nav-bg');
-			$('.navigation').css('margin-top', '-' + 0 + 'px');
-		}
-	});
+	// $(window).scroll(function () {
+	// 	var height = $('.top-header').innerHeight();
+	// 	if ($('header').offset().top > 10) {
+	// 		$('.top-header').addClass('hide');
+	// 		$('.navigation').addClass('nav-bg');
+	// 		$('.navigation').css('margin-top', '-' + height + 'px');
+	// 	} else {
+	// 		$('.top-header').removeClass('hide');
+	// 		$('.navigation').removeClass('nav-bg');
+	// 		$('.navigation').css('margin-top', '-' + 0 + 'px');
+	// 	}
+	// });
 	// navbarDropdown
 	if ($(window).width() < 992) {
 		$('.navigation .dropdown-toggle').on('click', function () {
@@ -154,8 +155,8 @@ $.get("data/eventslist.csv",function(data){
 
 //     });
 // });
-var SmoothScroll=require('smooth-scroll')
-var scroll = new SmoothScroll('a[href*="#"]',{offset:100,speed:10});
+// var SmoothScroll=require('smooth-scroll')
+// var scroll = new SmoothScroll('a[href*="#"]',{offset:100,speed:10});
 
 // var anime=require('animejs');
 // var litm=document.querySelectorAll("#events-list li");
@@ -198,5 +199,22 @@ jQuery(function(){
 			}
 		],
 	});
+	
 });
 
+// var lastScrollTop = $(this).scrollTop();
+
+// 	$(window).scroll(function(){
+// 		var st = $(this).scrollTop();
+		
+// 		if (st > lastScrollTop){
+// 			$('html, body').animate({
+// 				scrollTop: st+10,
+// 			},80);
+// 		} else {
+// 			$('html, body').animate({
+// 				scrollTop: st-10,
+// 			},80);
+// 		}
+// 		lastScrollTop = st;
+// 	});

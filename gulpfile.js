@@ -43,23 +43,26 @@ var path = {
   },
 };
 
-gulp.task("build:import", function(){
-  return browserify({
-      entries: []
-  })
-  .transform(babelify)
-  .bundle()
-  .pipe(source('bundle.js'))
-  .pipe(gulp.dest(path.build.dirDev + "js/"))
-  .pipe(
-    bs.reload({
-      stream: true,
-    })
-  );
-});
+// gulp.task("build:import", function(){
+//   return browserify({
+//       entries: []
+//   })
+//   .transform(babelify)
+//   .bundle()
+//   .pipe(source('bundle.js'))
+//   .pipe(gulp.dest(path.build.dirDev + "js/"))
+//   .pipe(
+//     bs.reload({
+//       stream: true,
+//     })
+//   );
+// });
 
 gulp.task('browserify', function() {
-  return browserify("source/js/script.js")
+  return browserify({
+      entries:["source/js/script.js","source/js/scroll.js"]
+  })
+    .transform(babelify)
     .bundle()
     //Pass desired output filename to vinyl-source-stream
     .pipe(source('script.js'))
@@ -200,7 +203,7 @@ gulp.task(
   gulp.series(
     "clean",
     "html:build",
-    "build:import",
+    // "build:import",
     'browserify',
     "scss:build",
     "images:build",
@@ -222,7 +225,7 @@ gulp.task(
   "build",
   gulp.series(
     "html:build",
-    "build:import",
+    // "build:import",
     'browserify',
     "scss:build",
     "images:build",
