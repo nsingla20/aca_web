@@ -338,10 +338,6 @@ a h4:hover {
   outline: 0;
 }
 
-.section {
-  padding-top: 90px;
-  padding-bottom: 90px;
-}
 .section-sm {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -1021,5 +1017,9 @@ link:focus,
 .navbar-brand {
   padding: 0;
   margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 /*# sourceMappingURL=style.css.map */
