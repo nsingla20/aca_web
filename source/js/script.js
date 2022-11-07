@@ -114,30 +114,7 @@ wow.init();
 	
 })(jQuery);
 
-$.get( "data/facultyaward.csv", function( data ) {
-	var content="<tbody>"
-	data.split("\n").forEach(function(row) {
-		content += "<tr>";
-		
-		row.split(",").forEach(function(cell) {
-			content += "<td class='wow pulse'>" + cell + "</td>" ;
-		});
-		content += "</tr>";
-	});
-	content+="</tbody>"
-	$('#fac-award-wrapper')[0].innerHTML+=content;
-	wow.sync();
-});
-$.get("data/eventslist.csv",function(data){
-	var content="";
-	data.split("\n").forEach(function(row){
-		content+="<li class='wow fadeInLeft'>";
-		content+="<p>"+row.split('`')[0]+"</p>";
-		content+="</li>"
-	});
-	$("#events-list")[0].innerHTML=content;
-	wow.sync();
-});
+
 
 
 // var scrollToElement = require('scroll-to-element');
@@ -179,6 +156,63 @@ $.get("data/eventslist.csv",function(data){
 //    }
 //  });
 jQuery(function(){
+	$.get( "data/facultyaward.csv", function( data ) {
+		var content=$(".awardtime")[0].innerHTML;
+		var to=$(".awardtime");
+		to[0].innerHTML="";
+		data.split("\n").forEach(function(row) {
+			var ele=$(content);
+			
+			var arr=row.split(",");
+			ele.children("div").children(".content").children("p").text(arr[0]);
+			ele.children("div").children(".content-hover").children("p").text(arr[1]);
+			ele.children("div").children(".content-hover").children("h1").text(arr[0]);
+			to.append(ele);
+		});
+		// wow.sync();
+		var sli=$(".awardtime").slick({
+			slidesToShow: 3,
+			centerMode: true,
+	//   centerPadding: '360px',
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 2000,
+			
+			// fade:true,
+			// swipeToSlide:true,
+			arrows:false,
+			// cssEase: 'linear',
+			// infinite:false,
+			responsive : [
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 1,
+						
+					},
+				}
+			],
+		});
+		sli.on('beforeChange', function(event, slick, currentSlideIndex, nextSlideIndex) {
+		// 	if(nextSlideIndex > currentSlideIndex) {
+		// 		// Animation to go to next slide
+		// 		nextSlideIndex+=1;
+		// 	   $('.awardtime .slick-slide[data-slick-index=' + (currentSlideIndex-1) + ']').addClass('bounceOutDown').removeClass('bounceInDown');
+		// 	   $('.awardtime .slick-slide[data-slick-index=' + nextSlideIndex + ']').addClass('bounceInDown').removeClass('bounceOutDown');
+		//    } else {
+		//    }
+	   });
+	});
+	$.get("data/eventslist.csv",function(data){
+		var content="";
+		data.split("\n").forEach(function(row){
+			content+="<li class='wow fadeInLeft'>";
+			content+="<p>"+row.split('`')[0]+"</p>";
+			content+="</li>"
+		});
+		$("#events-list")[0].innerHTML=content;
+		wow.sync();
+	});
 	$(".projectsslide").slick({
 		slidesToShow: 3,
 		slidesToScroll: 1,
@@ -199,6 +233,7 @@ jQuery(function(){
 			}
 		],
 	});
+	
 	
 });
 

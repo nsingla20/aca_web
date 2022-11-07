@@ -16,7 +16,7 @@
 }
 
 .navigation {
-  background: linear-gradient(to right, transparent 50%, $primary-color 50%);
+  background: linear-gradient(to right, black , $primary-color);
   transition: .2s ease;
 
   @include desktop {
@@ -36,7 +36,7 @@
 
 .navbar-nav {
   padding-left: 50px;
-  background: $primary-color;
+  background: transparent;
 
   @include desktop {
     padding-left: 0;
