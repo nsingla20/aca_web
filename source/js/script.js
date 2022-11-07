@@ -2,8 +2,9 @@ import { WOW } from "wowjs";
 import 'smoothscroll-for-websites';
 // import "slick-carousel";
 // import $ from "jquery";
-
-const wow = new WOW();
+const wow = new WOW({
+	scrollContainer:'.content-main',
+});
 wow.init();
 
 (function ($) {

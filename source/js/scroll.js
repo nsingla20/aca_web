@@ -543,6 +543,8 @@
 //     }
     
 //     })();
+
+
 // Cache selectors
 var topMenu = $(".navigation"),
     topMenuHeight = topMenu.outerHeight()+15,
@@ -552,16 +554,18 @@ var topMenu = $(".navigation"),
     scrollItems = menuItems.map(function(){
       var item = $($(this).attr("href"));
       if (item.length) { return item; }
-    });
+    }),
+    h=$('.content-main').height()/2;
 
 // Bind to scroll
-$(window).scroll(function(){
+$('.content-main').scroll(function(){
    // Get container scroll position
-   var fromTop = $(this).scrollTop()+topMenuHeight;
+   var fromTop = $(this).offset().top+h;
+//    console.log(fromTop);
 
    // Get id of current scroll item
    var cur = scrollItems.map(function(){
-     if ($(this).offset().top < fromTop)
+     if ($(this).offset().top<fromTop)
        return this;
    });
    // Get the id of the current element
