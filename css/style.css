@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Slider */
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 .slick-slider {
@@ -546,7 +547,7 @@ textarea.form-control {
 }
 
 .navigation {
-  background: linear-gradient(to right, transparent 50%, #2c38ba 50%);
+  background: linear-gradient(to right, black, #2c38ba);
   transition: 0.2s ease;
 }
 @media (max-width: 991px) {
@@ -567,7 +568,7 @@ textarea.form-control {
 
 .navbar-nav {
   padding-left: 50px;
-  background: #2c38ba;
+  background: transparent;
 }
 @media (max-width: 991px) {
   .navbar-nav {
@@ -1014,6 +1015,245 @@ link:focus,
   color: #2c38ba;
 }
 
+.awardtime {
+  text-align: center;
+  max-height: 300px;
+  height: 300px;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+.awardtime .slick-track {
+  vertical-align: middle;
+  height: 300px;
+}
+.awardtime h1 {
+  margin-top: 4%;
+  margin-bottom: 4%;
+  font-family: "Patua One", cursive;
+}
+.awardtime .slick-slide {
+  justify-content: center;
+  vertical-align: center;
+  align-content: center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.awardtime .box {
+  transition: all 0.35s ease-in-out;
+  position: relative;
+  border-radius: 50%;
+  height: 0px;
+  width: 0px;
+  vertical-align: middle;
+  background-color: #1a1a37;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-flow: column;
+}
+.awardtime .box .content-hover {
+  transform: scale(0, 0);
+  position: absolute;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  background-color: #2c38ba;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  padding: 2em 2em;
+}
+.awardtime .box .content-hover h1 {
+  color: #ffffff;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-family: "Patua One", cursive;
+  font-style: italic;
+}
+.awardtime .box .content-hover p {
+  color: #ffffff;
+}
+.awardtime .box .content {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+}
+.awardtime .box .content p {
+  font-size: 1.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: -2em;
+}
+.awardtime .box:hover > .content-hover {
+  transform: scale(1, 1);
+  cursor: pointer;
+}
+.awardtime .slick-center .content-hover {
+  transform: scale(1, 1);
+}
+.awardtime .slick-active .box {
+  height: 200px;
+  width: 200px;
+}
+.awardtime .slick-center .box {
+  height: 300px;
+  width: 300px;
+}
+
+/* Slider */
+.slick-loading .slick-list {
+  background: #fff url("./ajax-loader.gif") center center no-repeat;
+}
+
+/* Icons */
+@font-face {
+  font-family: "slick";
+  src: url("./fonts/slick.eot");
+  src: url("./fonts/slick.eot?#iefix") format("embedded-opentype"), url("./fonts/slick.woff") format("woff"), url("./fonts/slick.ttf") format("truetype"), url("./fonts/slick.svg#slick") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Arrows */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 20px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 50%;
+  transform: translate(0, -50%);
+  padding: 0;
+  border: none;
+  outline: none;
+}
+.slick-prev:hover, .slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  outline: none;
+  background: transparent;
+  color: transparent;
+}
+.slick-prev:hover:before, .slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+  opacity: 1;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: 0.25;
+}
+.slick-prev:before,
+.slick-next:before {
+  font-family: "slick";
+  font-size: 20px;
+  line-height: 1;
+  color: white;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+  left: -25px;
+}
+[dir=rtl] .slick-prev {
+  left: auto;
+  right: -25px;
+}
+.slick-prev:before {
+  content: "←";
+}
+[dir=rtl] .slick-prev:before {
+  content: "→";
+}
+
+.slick-next {
+  right: -25px;
+}
+[dir=rtl] .slick-next {
+  left: -25px;
+  right: auto;
+}
+.slick-next:before {
+  content: "→";
+}
+[dir=rtl] .slick-next:before {
+  content: "←";
+}
+
+/* Dots */
+.slick-dotted.slick-slider {
+  margin-bottom: 30px;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+.slick-dots li button {
+  border: 0;
+  background: transparent;
+  display: block;
+  height: 20px;
+  width: 20px;
+  outline: none;
+  line-height: 0px;
+  font-size: 0px;
+  color: transparent;
+  padding: 5px;
+  cursor: pointer;
+}
+.slick-dots li button:hover, .slick-dots li button:focus {
+  outline: none;
+}
+.slick-dots li button:hover:before, .slick-dots li button:focus:before {
+  opacity: 1;
+}
+.slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "•";
+  width: 20px;
+  height: 20px;
+  font-family: "slick";
+  font-size: 6px;
+  line-height: 20px;
+  text-align: center;
+  color: black;
+  opacity: 0.25;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before {
+  color: black;
+  opacity: 0.75;
+}
+
 .navbar-brand {
   padding: 0;
   margin: 0;
@@ -1021,5 +1261,12 @@ link:focus,
 
 html {
   scroll-behavior: smooth;
+}
+
+:target:before {
+  content: "";
+  display: block;
+  height: 100px;
+  margin: -100px 0 0;
 }
 /*# sourceMappingURL=style.css.map */

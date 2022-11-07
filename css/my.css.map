@@ -1,1 +1,0 @@
-{"version":3,"sources":["my.scss","my.css"],"names":[],"mappings":"AAGA;EACI,UAAA;EACA,SAAA;ACFJ;;ADIA;EACI,uBAAA;ACDJ","file":"my.css","sourcesContent":["// #events-list li {\n    \n// }\n.navbar-brand{\n    padding: 0;\n    margin: 0;\n}\nhtml {\n    scroll-behavior: smooth;\n  }",".navbar-brand {\n  padding: 0;\n  margin: 0;\n}\n\nhtml {\n  scroll-behavior: smooth;\n}"]}
