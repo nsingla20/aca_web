@@ -1022,6 +1022,25 @@ link:focus,
   width: 100%;
   justify-content: center;
   display: flex;
+  align-items: center;
+}
+.awardtime .prev-arrow {
+  left: -40px;
+  width: 0;
+  height: 0;
+  border-left: 0 solid transparent;
+  border-right: 15px solid #113463;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+.awardtime .next-arrow {
+  right: -40px;
+  width: 0;
+  height: 0;
+  border-right: 0 solid transparent;
+  border-left: 15px solid #113463;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
 }
 .awardtime .slick-track {
   vertical-align: middle;
@@ -1087,6 +1106,7 @@ link:focus,
   font-weight: 600;
   text-transform: uppercase;
   margin-top: -2em;
+  color: #96713f;
 }
 .awardtime .box:hover > .content-hover {
   transform: scale(1, 1);

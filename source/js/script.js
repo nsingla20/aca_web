@@ -179,10 +179,11 @@ jQuery(function(){
 			autoplay: true,
 			pauseOnFocus:false,
 			autoplaySpeed: 2000,
-			
+			prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+    nextArrow: '<button class="slide-arrow next-arrow"></button>',
 			// fade:true,
 			// swipeToSlide:true,
-			arrows:false,
+			// arrows:false,
 			cssEase: 'linear',
 			// infinite:false,
 			responsive : [
