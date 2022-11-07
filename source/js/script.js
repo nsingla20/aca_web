@@ -176,12 +176,13 @@ jQuery(function(){
 	//   centerPadding: '360px',
 			slidesToScroll: 1,
 			autoplay: true,
+			pauseOnFocus:false,
 			autoplaySpeed: 2000,
 			
 			// fade:true,
 			// swipeToSlide:true,
 			arrows:false,
-			// cssEase: 'linear',
+			cssEase: 'linear',
 			// infinite:false,
 			responsive : [
 				{

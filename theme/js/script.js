@@ -1476,11 +1476,12 @@ jQuery(function () {
       //   centerPadding: '360px',
       slidesToScroll: 1,
       autoplay: true,
+      pauseOnFocus: false,
       autoplaySpeed: 2000,
       // fade:true,
       // swipeToSlide:true,
       arrows: false,
-      // cssEase: 'linear',
+      cssEase: 'linear',
       // infinite:false,
       responsive: [{
         breakpoint: 600,
@@ -1546,6 +1547,8 @@ jQuery(function () {
 // 	});
 
 },{"smoothscroll-for-websites":1,"wowjs":2}],4:[function(require,module,exports){
+"use strict";
+
 // //
 // // SmoothScroll for websites v1.2.1
 // // Licensed under the terms of the MIT license.
@@ -2083,6 +2086,33 @@ jQuery(function () {
 //     }
 
 //     })();
-"use strict";
+// Cache selectors
+var topMenu = $(".navigation"),
+  topMenuHeight = topMenu.outerHeight() + 15,
+  // All list items
+  menuItems = topMenu.find("a"),
+  // Anchors corresponding to menu items
+  scrollItems = menuItems.map(function () {
+    var item = $($(this).attr("href"));
+    if (item.length) {
+      return item;
+    }
+  });
+
+// Bind to scroll
+$(window).scroll(function () {
+  // Get container scroll position
+  var fromTop = $(this).scrollTop() + topMenuHeight;
+
+  // Get id of current scroll item
+  var cur = scrollItems.map(function () {
+    if ($(this).offset().top < fromTop) return this;
+  });
+  // Get the id of the current element
+  cur = cur[cur.length - 1];
+  var id = cur && cur.length ? cur[0].id : "";
+  // Set/remove active class
+  menuItems.parent().removeClass("active").end().filter("[href='#" + id + "']").parent().addClass("active");
+});
 
 },{}]},{},[3,4]);
