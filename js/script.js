@@ -1312,8 +1312,9 @@ var _wowjs = require("wowjs");
 require("smoothscroll-for-websites");
 // import "slick-carousel";
 // import $ from "jquery";
-
-var wow = new _wowjs.WOW();
+var wow = new _wowjs.WOW({
+  scrollContainer: '.content-main'
+});
 wow.init();
 (function ($) {
   'use strict';
@@ -2086,6 +2087,7 @@ jQuery(function () {
 //     }
 
 //     })();
+
 // Cache selectors
 var topMenu = $(".navigation"),
   topMenuHeight = topMenu.outerHeight() + 15,
@@ -2097,12 +2099,14 @@ var topMenu = $(".navigation"),
     if (item.length) {
       return item;
     }
-  });
+  }),
+  h = $('.content-main').height() / 2;
 
 // Bind to scroll
-$(window).scroll(function () {
+$('.content-main').scroll(function () {
   // Get container scroll position
-  var fromTop = $(this).scrollTop() + topMenuHeight;
+  var fromTop = $(this).offset().top + h;
+  //    console.log(fromTop);
 
   // Get id of current scroll item
   var cur = scrollItems.map(function () {
