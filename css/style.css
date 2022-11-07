@@ -98,12 +98,12 @@ body {
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 15px;
-  color: #a17a46;
+  color: #111110;
 }
 
 p, .paragraph {
   font-weight: 400;
-  color: #a17a46;
+  color: #111110;
   font-size: 15px;
   line-height: 1.9;
   font-family: "Poppins", sans-serif;
@@ -397,7 +397,7 @@ a h4:hover {
 }
 
 .text-color {
-  color: #a17a46;
+  color: #111110;
 }
 
 .text-light {
