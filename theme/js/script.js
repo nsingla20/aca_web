@@ -1308,6 +1308,11 @@ else
 },{}],3:[function(require,module,exports){
 "use strict";
 
+},{}],4:[function(require,module,exports){
+arguments[4][3][0].apply(exports,arguments)
+},{"dup":3}],5:[function(require,module,exports){
+"use strict";
+
 var _wowjs = require("wowjs");
 require("smoothscroll-for-websites");
 // import "slick-carousel";
@@ -1472,7 +1477,7 @@ jQuery(function () {
     });
     // wow.sync();
     var sli = $(".awardtime").slick({
-      slidesToShow: 3,
+      slidesToShow: 5,
       centerMode: true,
       //   centerPadding: '360px',
       slidesToScroll: 1,
@@ -1549,7 +1554,7 @@ jQuery(function () {
 // 		lastScrollTop = st;
 // 	});
 
-},{"smoothscroll-for-websites":1,"wowjs":2}],4:[function(require,module,exports){
+},{"smoothscroll-for-websites":1,"wowjs":2}],6:[function(require,module,exports){
 "use strict";
 
 // //
@@ -2121,4 +2126,111 @@ $('.content-main').scroll(function () {
   menuItems.parent().removeClass("active").end().filter("[href='#" + id + "']").parent().addClass("active");
 });
 
-},{}]},{},[3,4]);
+},{}],7:[function(require,module,exports){
+"use strict";
+
+var mapdata = {
+  // "Role" : 1,
+  // ".card-cover" : 2,
+  // ".card-avatar" : 3, 
+  ".card-fullname": 4,
+  ".card-jobtitle": 5,
+  ".card-desc": 6,
+  ".card-social-fb": 7,
+  ".card-social-tw": 8,
+  ".card-social-ins": 9,
+  ".card-social-lnk": 10,
+  ".card-loc": 11,
+  ".card-phn": 12,
+  ".card-email": 13,
+  ".card-worktg": 14
+  // Delete : 15,
+};
+
+var sf = "https://docs.google.com/spreadsheets/d/11Tb777PaN4opl0Oazqf9UznrOixbBbNb4vMsltJ2yBQ/gviz/tq?tqx=out:json";
+$.ajax({
+  url: sf,
+  type: 'GET',
+  dataType: 'text'
+}).done(function (data) {
+  var r = data.match(/google\.visualization\.Query\.setResponse\(([\s\S\w]+)\)/);
+  if (r && r.length == 2) {
+    var obj = JSON.parse(r[1]);
+    var table = obj.table;
+    var header = table.cols.map(function (_ref) {
+      var label = _ref.label;
+      return label;
+    });
+    var rows = table.rows.map(function (_ref2) {
+      var c = _ref2.c;
+      return c.map(function (e) {
+        return e ? e.v || "" : "";
+      });
+    }); // Modified from const rows = table.rows.map(({c}) => c.map(({v}) => v));
+
+    // console.log(header);
+    // console.log(rows);
+
+    var orignal = $('.secy-profiles')[0].innerHTML;
+    $('.secy-profiles')[0].innerHTML = "";
+    rows.forEach(function (row) {
+      if (row[15] != 'Yes') {
+        var role = row[1] == "Cordi" ? ".cordi-profiles" : '.secy-profiles';
+        var content = $(orignal);
+        content.find('.card-avatar').attr('src', row[3]);
+        $.each(mapdata, function (k, v) {
+          content.find(k).text(row[v]);
+        });
+        // console.log(content);
+        $(role).append(content);
+        console.log('Added Team-mem : ' + row[4]);
+      }
+    });
+    $(".secy-profiles").slick({
+      slidesToShow: 4,
+      slidesToScroll: 2,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      // variableWidth: true,
+      // centerMode:true,
+      dots: false,
+      // arrows:true,
+      // nextArrow:$('.nxtproj'),
+      // prevArrow:$('.prevproj'),
+      responsive: [{
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1
+        }
+      }]
+    });
+    var buttons = document.querySelectorAll(".profile-outer .card-buttons button");
+    // const sections = document.querySelectorAll(".profile-outer .card-section");
+    var cards = document.querySelector(".profile-outer .card");
+    var handleButtonClick = function handleButtonClick(e) {
+      var targetSection = e.target.getAttribute("data-section");
+      var card = e.target.closest('.card');
+      var section = card.querySelector(targetSection);
+      var sections = card.querySelectorAll('.card-section');
+      targetSection !== "#about" ? card.classList.add("is-active") : card.classList.remove("is-active");
+      card.setAttribute("data-state", targetSection);
+      sections.forEach(function (s) {
+        return s.classList.remove("is-active");
+      });
+      buttons.forEach(function (b) {
+        return b.classList.remove("is-active");
+      });
+      e.target.classList.add("is-active");
+      section.classList.add("is-active");
+    };
+    $(function () {
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", handleButtonClick);
+      });
+    });
+  }
+}).fail(function (e) {
+  return console.log(e.status);
+});
+
+},{}]},{},[3,4,5,6,7]);

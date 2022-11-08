@@ -8,7 +8,7 @@ const autoprefixer = require("gulp-autoprefixer");
 const bs = require("browser-sync").create();
 const rimraf = require("rimraf");
 const comments = require("gulp-header-comment");
-
+const glob=require('glob');
 var deploy      = require('gulp-gh-pages');
 
 var browserify = require('browserify');
@@ -59,8 +59,9 @@ var path = {
 // });
 
 gulp.task('browserify', function() {
+  var jsFiles=glob.sync(path.src.js);
   return browserify({
-      entries:["source/js/script.js","source/js/scroll.js"]
+      entries:jsFiles
   })
     .transform(babelify)
     .bundle()
@@ -125,14 +126,6 @@ gulp.task("scss:build", function () {
 gulp.task("js:build", function () {
   return gulp
     .src(path.src.js)
-    .pipe(
-      comments(`
-  WEBSITE: https://themefisher.com
-  TWITTER: https://twitter.com/themefisher
-  FACEBOOK: https://www.facebook.com/themefisher
-  GITHUB: https://github.com/themefisher/
-  `)
-    )
     .pipe(gulp.dest(path.build.dirDev + "js/"))
     .pipe(
       bs.reload({

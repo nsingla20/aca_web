@@ -172,7 +172,7 @@ jQuery(function(){
 		});
 		// wow.sync();
 		var sli=$(".awardtime").slick({
-			slidesToShow: 3,
+			slidesToShow: 5,
 			centerMode: true,
 	//   centerPadding: '360px',
 			slidesToScroll: 1,

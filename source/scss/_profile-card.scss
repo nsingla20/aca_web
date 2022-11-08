@@ -17,7 +17,39 @@
 //   padding: 20px;
 // }
 .secy-profiles{
-    height: 300px;
+    height: 400px;
+    // .prev-arrow{
+    //     left: -40px;
+    //     width: 0;
+    //     height: 0;
+    //     border-left: 0 solid transparent;
+    //     border-right: 15px solid #113463;
+    //     border-top: 10px solid transparent;
+    //     border-bottom: 10px solid transparent;
+    //   }
+    //   .next-arrow{
+    //     right: -40px;
+    //     width: 0;
+    //     height: 0;
+    //     border-right: 0 solid transparent;
+    //     border-left: 15px solid #113463;
+    //     border-top: 10px solid transparent;
+    //     border-bottom: 10px solid transparent;
+    //   }
+      .slick-track{
+        vertical-align: middle;
+        justify-content: center;
+        height: 400px;
+      }
+      .slick-slide{
+        
+        // vertical-align: center;
+        // align-content: center;
+        // margin: auto;
+        // display: flex;
+        // align-items:center;
+        // overflow: hidden;
+      }
 }
 // .profile-outer .card-outer{
 //     all: initial;
@@ -26,10 +58,16 @@
     .card-header{
         all : initial;
     }
-    
-    box-sizing: border-box;
-    color: #2b2c48;
-  font-family: "Jost", sans-serif;
+    text-align: center;
+    // max-height: 300px;
+    // height: 300px;
+//     width: 100%;
+//     justify-content: center;
+//     display: flex;
+//     align-items: center;
+//     box-sizing: border-box;
+//     color: #2b2c48;
+//   font-family: "Jost", sans-serif;
 //   background-image: url(https://images.unsplash.com/photo-1566738780863-f9608f88f3a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2378&q=80);
 
 //   background-repeat: no-repeat;
@@ -37,14 +75,15 @@
 //   background-position: center;
 //   background-attachment: fixed;
 //   height: 100vh;
-  display: flex;
+//   display: flex;
 //   flex-wrap: wrap;
-  padding: 20px;
+//   padding: 20px;
     .card {
-      max-width: 340px;
+      max-width: 240px;
+      max-height: 400px;
       margin: auto;
-      overflow-y: auto;
-      position: relative;
+      overflow-y: hidden;
+    //   position: relative;
       z-index: 1;
       overflow-x: hidden;
       background-color: rgba(255, 255, 255, 1);
@@ -54,7 +93,9 @@
       border-radius: 10px;
       box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
     }
-    
+    // .card::-webkit-scrollbar{
+    //     width: 0;
+    // }
     .card[data-state="#about"] {
       height: 450px;
       .card-main {
@@ -63,7 +104,7 @@
     }
     
     .card[data-state="#contact"] {
-      height: 430px;
+      height: 450px;
     }
     
     .card[data-state="#experience"] {
@@ -202,6 +243,7 @@
     .card-social {
       display: flex;
       align-items: center;
+      justify-content: center;
       padding: 0 20px;
       margin-bottom: 30px;
       svg {
