@@ -95,7 +95,7 @@
 }
 body {
   line-height: 1.2;
-  font-family: "Poppins", sans-serif;
+  font-family: "math";
   -webkit-font-smoothing: antialiased;
   font-size: 15px;
   color: #111110;
@@ -106,12 +106,12 @@ p, .paragraph {
   color: #111110;
   font-size: 15px;
   line-height: 1.9;
-  font-family: "Poppins", sans-serif;
+  font-family: "math";
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #1e1e4b;
-  font-family: "futura-bold";
+  font-family: "math";
   font-weight: 700;
   line-height: 1.2;
 }
@@ -173,7 +173,7 @@ h6, .h6 {
 /* Button style */
 .btn {
   font-size: 16px;
-  font-family: "Poppins", sans-serif;
+  font-family: "math";
   text-transform: capitalize;
   padding: 15px 40px;
   border-radius: 0;
@@ -417,7 +417,7 @@ a h4:hover {
 }
 
 .font-secondary {
-  font-family: "futura-bold";
+  font-family: "math";
 }
 
 .mb-10 {
@@ -725,7 +725,7 @@ link:focus,
   color: #1e1e4b;
   transition: 0.2s ease;
   text-transform: capitalize;
-  font-family: "Poppins", sans-serif;
+  font-family: "math";
 }
 @media (max-width: 991px) {
   .navbar .dropdown .dropdown .dropdown-toggle, .navbar .dropdown-item {
@@ -926,7 +926,7 @@ link:focus,
 .card-date {
   position: absolute;
   background: #2c38ba;
-  font-family: "futura-bold";
+  font-family: "math";
   text-align: center;
   padding: 10px;
   color: #fff;
@@ -1116,12 +1116,12 @@ link:focus,
   transform: scale(1, 1);
 }
 .awardtime .slick-active .box {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
 }
 .awardtime .slick-center .box {
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
 }
 
 /* Slider */
@@ -1300,24 +1300,24 @@ link:focus,
 }
 
 .secy-profiles {
-  height: 300px;
+  height: 400px;
 }
-
+.secy-profiles .slick-track {
+  vertical-align: middle;
+  justify-content: center;
+  height: 400px;
+}
 .profile-outer {
-  box-sizing: border-box;
-  color: #2b2c48;
-  font-family: "Jost", sans-serif;
-  display: flex;
-  padding: 20px;
+  text-align: center;
 }
 .profile-outer .card-header {
   all: initial;
 }
 .profile-outer .card {
-  max-width: 340px;
+  max-width: 240px;
+  max-height: 400px;
   margin: auto;
-  overflow-y: auto;
-  position: relative;
+  overflow-y: hidden;
   z-index: 1;
   overflow-x: hidden;
   background-color: rgb(255, 255, 255);
@@ -1334,7 +1334,7 @@ link:focus,
   padding-top: 0;
 }
 .profile-outer .card[data-state="#contact"] {
-  height: 430px;
+  height: 450px;
 }
 .profile-outer .card[data-state="#experience"] {
   height: 550px;
@@ -1455,6 +1455,7 @@ link:focus,
 .profile-outer .card-social {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 20px;
   margin-bottom: 30px;
 }
@@ -1638,6 +1639,6 @@ html {
 }
 
 .content-main {
-  padding-bottom: 500px;
+  padding-bottom: 62px;
 }
 /*# sourceMappingURL=style.css.map */
