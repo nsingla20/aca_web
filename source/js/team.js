@@ -36,12 +36,23 @@ $.ajax({url: sf, type: 'GET', dataType: 'text'})
             if(row[15]!='Yes'){
                 var role=(row[1]=="Cordi")?".cordi-profiles":'.secy-profiles';
                 var content=$(orignal);
-                content.find('.card-avatar').attr('src',row[3]);
+                var found = row[2].match( /d\/([A-Za-z0-9\-_]+)/ );
+                
+                if ( found&&found[1].length ) {
+                    row[2] = 'https://drive.google.com/uc?export=view&id=' + found[1];
+                   }
+                   found = row[3].match( /d\/([A-Za-z0-9\-_]+)/ );
+                if ( found&&found[1].length ) {
+                 row[3] = 'https://drive.google.com/uc?export=view&id=' + found[1];
+                }
+                if(row[2])content.find('.card-cover').css("background-image", "url(" + row[2] + ")");
+                if(row[3])content.find('.card-avatar').attr('src',row[3]);
                 $.each(mapdata,function(k,v){
                     content.find(k).text(row[v]);
                 });
-                // console.log(content);
+                // 
                 $(role).append(content);
+                console.log(content);
                 console.log('Added Team-mem : '+row[4]);
             }
         });
@@ -61,14 +72,14 @@ $.ajax({url: sf, type: 'GET', dataType: 'text'})
                     breakpoint: 600,
                     settings: {
                         slidesToShow: 1,
-                        
+                        slidesToScroll: 1,
                     },
                 }
             ],
         });
         const buttons = document.querySelectorAll(".profile-outer .card-buttons button");
         // const sections = document.querySelectorAll(".profile-outer .card-section");
-        const cards = document.querySelector(".profile-outer .card");
+        // const cards = document.querySelector(".profile-outer .card");
         
         const handleButtonClick = (e) => {
             const targetSection = e.target.getAttribute("data-section");
@@ -80,7 +91,7 @@ $.ajax({url: sf, type: 'GET', dataType: 'text'})
             : card.classList.remove("is-active");
             card.setAttribute("data-state", targetSection);
             sections.forEach((s) => s.classList.remove("is-active"));
-            buttons.forEach((b) => b.classList.remove("is-active"));
+            card.querySelectorAll(".card-buttons button").forEach((b) => b.classList.remove("is-active"));
             e.target.classList.add("is-active");
             section.classList.add("is-active");
         };
