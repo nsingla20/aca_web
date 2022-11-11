@@ -1315,6 +1315,7 @@ link:focus,
   max-height: 300px;
   margin: auto;
   overflow-y: hidden;
+  position: relative;
   z-index: 1;
   overflow-x: hidden;
   background-color: rgb(255, 255, 255);
@@ -1454,7 +1455,6 @@ link:focus,
   align-items: center;
   justify-content: center;
   padding: 0 20px;
-  margin-bottom: 30px;
 }
 .profile-outer .card-social svg {
   fill: rgb(165, 181, 206);
