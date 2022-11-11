@@ -1299,9 +1299,6 @@ link:focus,
   background-clip: content-box;
 }
 
-.secy-profiles {
-  height: 400px;
-}
 .secy-profiles .slick-track {
   vertical-align: middle;
   justify-content: center;
@@ -1315,7 +1312,7 @@ link:focus,
 }
 .profile-outer .card {
   max-width: 240px;
-  max-height: 400px;
+  max-height: 300px;
   margin: auto;
   overflow-y: hidden;
   z-index: 1;

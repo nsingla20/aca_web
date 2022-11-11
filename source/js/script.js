@@ -60,11 +60,11 @@ wow.init();
 	// $('.hero-slider').slickAnimation();
 	
 	// venobox popup
-	$(document).ready(function () {
-		$('.venobox').venobox();
+	// $(document).ready(function () {
+	// 	$('.venobox').venobox();
 		
 		
-	});
+	// });
 	
 	
 	// filter
@@ -196,7 +196,7 @@ jQuery(function(){
 				}
 			],
 		});
-		sli.on('beforeChange', function(event, slick, currentSlideIndex, nextSlideIndex) {
+		// sli.on('beforeChange', function(event, slick, currentSlideIndex, nextSlideIndex) {
 		// 	if(nextSlideIndex > currentSlideIndex) {
 		// 		// Animation to go to next slide
 		// 		nextSlideIndex+=1;
@@ -204,7 +204,7 @@ jQuery(function(){
 		// 	   $('.awardtime .slick-slide[data-slick-index=' + nextSlideIndex + ']').addClass('bounceInDown').removeClass('bounceOutDown');
 		//    } else {
 		//    }
-	   });
+	//    });
 	});
 	$.get("data/eventslist.csv",function(data){
 		var content="";

@@ -56,27 +56,30 @@ $.ajax({url: sf, type: 'GET', dataType: 'text'})
                 console.log('Added Team-mem : '+row[4]);
             }
         });
-        $(".secy-profiles").slick({
-            slidesToShow: 4,
-            slidesToScroll: 2,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            // variableWidth: true,
-            // centerMode:true,
-            dots:false,
-            // arrows:true,
-            // nextArrow:$('.nxtproj'),
-            // prevArrow:$('.prevproj'),
-            responsive : [
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                    },
-                }
-            ],
-        });
+    //     $(".secy-profiles").slick({
+    //         slidesToShow: 4,
+    //         slidesToScroll: 1,
+    //         autoplay: true,
+    //         autoplaySpeed: 2000,
+    // //         prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+    // // nextArrow: '<button class="slide-arrow next-arrow"></button>',
+    //         // variableWidth: true,
+    //         // centerMode:true,
+    //         dots:false,
+    //         infinite:false,
+    //         pauseOnFocus:false,
+    //         // arrows:true,
+    //         // nextArrow:$('.nxtproj'),
+    //         // prevArrow:$('.prevproj'),
+    //         responsive : [
+    //             {
+    //                 breakpoint: 600,
+    //                 settings: {
+    //                     slidesToShow: 1,
+    //                 },
+    //             }
+    //         ],
+    //     });
         const buttons = document.querySelectorAll(".profile-outer .card-buttons button");
         // const sections = document.querySelectorAll(".profile-outer .card-section");
         // const cards = document.querySelector(".profile-outer .card");
