@@ -50,7 +50,6 @@ $.ajax({url: sf, type: 'GET', dataType: 'text'})
                 $.each(mapdata,function(k,v){
                     content.find(k).text(row[v]);
                 });
-                // 
                 $(role).append(content);
                 console.log(content);
                 console.log('Added Team-mem : '+row[4]);

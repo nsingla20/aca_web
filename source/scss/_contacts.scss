@@ -1,0 +1,54 @@
+// @import url("https://use.typekit.net/ovt6ynt.css");
+// @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Spectral:wght@200;300;400;500;600;700;800&display=swap");
+#contacts{
+    // .nav{
+    //     all:initial;
+    // }
+    .content{
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding: 30px;
+      }
+    //   .nav-pills{
+    //     width: 450px;
+    //   }
+      .nav-item{
+        margin: 0;
+        
+      }
+      .nav-pills .nav-link{
+        font-weight: bold;
+        padding-top: 13px;
+        text-align: center;
+        background: #fff;
+        color: $primary-color;
+        border-radius: 30px;
+        border: 1px solid #000 ;
+        height: 100px;
+      }
+      .nav-pills .nav-link.active{
+        background: $primary-color;
+        color: #fff;
+      }
+      .tab-content{
+        position: relative;
+        // border: 1px solid #000 ;
+        width: 100%;
+        height: auto;
+        margin-top: -50px;
+        background: linear-gradient(to bottom,$primary-color,black) ;
+        color: #000;
+        border-radius: 30px;
+        z-index: 1000;
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+        padding: 30px;
+        margin-bottom: 50px;
+      }
+      .tab-content button{
+        border-radius: 15px;
+        width: 100px;
+        margin: 0 auto;
+        float: right;
+      }
+}
