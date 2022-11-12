@@ -17,3 +17,41 @@ html {
 .content-main{
     padding-bottom: 62px;
 }
+.bg-cover {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  ::selection {
+    background: lighten($color: $primary-color, $amount: 10);
+    color: $white;
+  }
+  
+  /* preloader */
+  
+  .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1151ff;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .overlay {
+    position: relative;
+  
+    &::before {
+      position: absolute;
+      content: '';
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: $secondary-color;
+      opacity: .8;
+    }
+  }
