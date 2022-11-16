@@ -55,3 +55,7 @@ html {
       opacity: .8;
     }
   }
+  body{
+    background: lighten($color: black, $amount: 20);
+    color: white;
+  }
