@@ -1324,7 +1324,7 @@ wow.init();
 (function ($) {
   'use strict';
 
-  // Preloader js    
+  // Preloader js
   $(window).on('load', function () {
     $('.preloader').fadeOut(700);
   });
@@ -1470,6 +1470,9 @@ jQuery(function () {
     to[0].innerHTML = "";
     data.split("\n").forEach(function (row) {
       var ele = $(content);
+      if (!row) {
+        return;
+      }
       var arr = row.split(",");
       ele.children("div").children(".content").children("p").text(arr[0]);
       ele.children("div").children(".content-hover").children("p").text(arr[1]);

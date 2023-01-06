@@ -9,12 +9,12 @@ wow.init();
 
 (function ($) {
 	'use strict';
-	
-	// Preloader js    
+
+	// Preloader js
 	$(window).on('load', function () {
 		$('.preloader').fadeOut(700);
 	});
-	
+
 	// Sticky Menu
 	// $(window).scroll(function () {
 	// 	var height = $('.top-header').innerHeight();
@@ -36,14 +36,14 @@ wow.init();
 			}, 300);
 		});
 	}
-	
+
 	// Background-images
 	$('[data-background]').each(function () {
 		$(this).css({
 			'background-image': 'url(' + $(this).data('background') + ')'
 		});
 	});
-	
+
 	//Hero Slider
 	// $('.hero-slider').slick({
 	// 	autoplay: true,
@@ -58,15 +58,15 @@ wow.init();
 	// 	dots: true
 	// });
 	// $('.hero-slider').slickAnimation();
-	
+
 	// venobox popup
 	// $(document).ready(function () {
 	// 	$('.venobox').venobox();
-		
-		
+
+
 	// });
-	
-	
+
+
 	// filter
 	// $(document).ready(function () {
 	// 	var containerEl = document.querySelector('.filtr-container');
@@ -80,7 +80,7 @@ wow.init();
 	// 		$(this).addClass('active');
 	// 	});
 	// });
-	
+
 	//  Count Up
 	// function counter() {
 	// 	var oTop;
@@ -111,8 +111,8 @@ wow.init();
 	// $(window).on('scroll', function () {
 	// 	counter();
 	// });
-	
-	
+
+
 })(jQuery);
 
 
@@ -163,7 +163,9 @@ jQuery(function(){
 		to[0].innerHTML="";
 		data.split("\n").forEach(function(row) {
 			var ele=$(content);
-			
+			if(!row){
+				return;
+			}
 			var arr=row.split(",");
 			ele.children("div").children(".content").children("p").text(arr[0]);
 			ele.children("div").children(".content-hover").children("p").text(arr[1]);
@@ -191,7 +193,7 @@ jQuery(function(){
 					breakpoint: 600,
 					settings: {
 						slidesToShow: 1,
-						
+
 					},
 				}
 			],
@@ -231,20 +233,20 @@ jQuery(function(){
 				breakpoint: 600,
 				settings: {
 					slidesToShow: 1,
-					
+
 				},
 			}
 		],
 	});
-	
-	
+
+
 });
 
 // var lastScrollTop = $(this).scrollTop();
 
 // 	$(window).scroll(function(){
 // 		var st = $(this).scrollTop();
-		
+
 // 		if (st > lastScrollTop){
 // 			$('html, body').animate({
 // 				scrollTop: st+10,
