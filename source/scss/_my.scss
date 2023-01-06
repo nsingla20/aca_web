@@ -1,5 +1,5 @@
 // #events-list li {
-    
+
 // }
 .navbar-brand{
     padding: 0;
@@ -26,9 +26,9 @@ html {
     background: lighten($color: $primary-color, $amount: 10);
     color: $white;
   }
-  
+
   /* preloader */
-  
+
   .preloader {
     position: fixed;
     top: 0;
@@ -43,7 +43,7 @@ html {
   }
   .overlay {
     position: relative;
-  
+
     &::before {
       position: absolute;
       content: '';
@@ -58,4 +58,7 @@ html {
   body{
     background: lighten($color: black, $amount: 20);
     color: white;
+  }
+  #projects .card-text{
+    color: black;
   }

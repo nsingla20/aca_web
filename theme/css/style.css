@@ -911,4 +911,8 @@ body {
   background: #333333;
   color: white;
 }
+
+#projects .card-text {
+  color: black;
+}
 /*# sourceMappingURL=style.css.map */
