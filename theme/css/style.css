@@ -364,7 +364,7 @@ link:focus,
   width: 0;
   height: 0;
   border-left: 0 solid transparent;
-  border-right: 15px solid #113463;
+  border-right: 15px solid #2c38ba;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   background-color: transparent;
@@ -374,7 +374,7 @@ link:focus,
   width: 0;
   height: 0;
   border-right: 0 solid transparent;
-  border-left: 15px solid #113463;
+  border-left: 15px solid #2c38ba;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   background-color: transparent;
@@ -592,7 +592,7 @@ link:focus,
 .profile-outer .card-header {
   position: relative;
   display: flex;
-  height: 200px;
+  height: 230px;
   flex-shrink: 0;
   width: 100%;
   transition: 0.3s;
@@ -615,8 +615,8 @@ link:focus,
   transition: 0.5s;
 }
 .profile-outer .card-avatar {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   -o-object-position: center;
@@ -912,7 +912,35 @@ body {
   color: white;
 }
 
-#projects .card-text {
+.projectsslide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.projectsslide .card-text {
   color: black;
+}
+.projectsslide .card {
+  height: 450px;
+}
+.projectsslide .prev-arrow {
+  left: -40px;
+  width: 0;
+  height: 300px;
+  border-left: 0 solid transparent;
+  border-right: 20px solid #2c38ba;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  background-color: transparent;
+}
+.projectsslide .next-arrow {
+  right: -40px;
+  width: 0;
+  height: 300px;
+  border-right: 0 solid transparent;
+  border-left: 20px solid #2c38ba;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  background-color: transparent;
 }
 /*# sourceMappingURL=style.css.map */

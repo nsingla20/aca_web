@@ -1529,10 +1529,8 @@ jQuery(function () {
     autoplay: true,
     autoplaySpeed: 2000,
     // centerMode:true,
-    dots: false,
-    arrows: true,
-    nextArrow: $('.nxtproj'),
-    prevArrow: $('.prevproj'),
+    prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+    nextArrow: '<button class="slide-arrow next-arrow"></button>',
     responsive: [{
       breakpoint: 600,
       settings: {
@@ -2107,18 +2105,18 @@ $('.content-main').scroll(function () {
 var mapdata = {
   // "Role" : 1,
   // ".card-cover" : 2,
-  // ".card-avatar" : 3, 
+  // ".card-avatar" : 3,
   ".card-fullname": 4,
   ".card-jobtitle": 5,
-  ".card-desc": 6,
+  // ".card-desc" : 6,
   ".card-social-fb": 7,
   ".card-social-tw": 8,
   ".card-social-ins": 9,
-  ".card-social-lnk": 10,
-  ".card-loc": 11,
-  ".card-phn": 12,
-  ".card-email": 13,
-  ".card-worktg": 14
+  ".card-social-lnk": 10
+  // ".card-loc" : 11,
+  // ".card-phn" : 12,
+  // ".card-email" : 13,
+  // ".card-worktg" : 14,
   // Delete : 15,
 };
 

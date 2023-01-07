@@ -182,7 +182,7 @@ jQuery(function(){
 			pauseOnFocus:false,
 			autoplaySpeed: 2000,
 			prevArrow: '<button class="slide-arrow prev-arrow"></button>',
-    nextArrow: '<button class="slide-arrow next-arrow"></button>',
+    		nextArrow: '<button class="slide-arrow next-arrow"></button>',
 			// fade:true,
 			// swipeToSlide:true,
 			// arrows:false,
@@ -224,10 +224,8 @@ jQuery(function(){
 		autoplay: true,
 		autoplaySpeed: 2000,
 		// centerMode:true,
-		dots:false,
-		arrows:true,
-		nextArrow:$('.nxtproj'),
-		prevArrow:$('.prevproj'),
+		prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+    	nextArrow: '<button class="slide-arrow next-arrow"></button>',
 		responsive : [
 			{
 				breakpoint: 600,

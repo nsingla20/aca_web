@@ -1,18 +1,18 @@
 var mapdata = {
     // "Role" : 1,
     // ".card-cover" : 2,
-    // ".card-avatar" : 3, 
+    // ".card-avatar" : 3,
     ".card-fullname" : 4,
     ".card-jobtitle" : 5,
-    ".card-desc" : 6,
+    // ".card-desc" : 6,
     ".card-social-fb" :7 ,
     ".card-social-tw" : 8,
     ".card-social-ins" : 9,
     ".card-social-lnk" : 10,
-    ".card-loc" : 11,
-    ".card-phn" : 12,
-    ".card-email" : 13,
-    ".card-worktg" : 14,
+    // ".card-loc" : 11,
+    // ".card-phn" : 12,
+    // ".card-email" : 13,
+    // ".card-worktg" : 14,
     // Delete : 15,
 }
 
@@ -26,10 +26,10 @@ $.ajax({url: sf, type: 'GET', dataType: 'text'})
         const table = obj.table;
         const header = table.cols.map(({label}) => label);
         const rows = table.rows.map(({c}) => c.map(e => e ? (e.v || "") : "")); // Modified from const rows = table.rows.map(({c}) => c.map(({v}) => v));
-        
+
         // console.log(header);
         // console.log(rows);
-        
+
         var orignal=$('.secy-profiles')[0].innerHTML;
         $('.secy-profiles')[0].innerHTML="";
         rows.forEach(row => {
@@ -37,13 +37,13 @@ $.ajax({url: sf, type: 'GET', dataType: 'text'})
                 var role=(row[1]=="Cordi")?".cordi-profiles":'.secy-profiles';
                 var content=$(orignal);
                 var found = row[2].match( /d\/([A-Za-z0-9\-_]+)/ );
-                
+
                 if ( found&&found[1].length ) {
                     row[2] = 'https://drive.google.com/uc?export=view&id=' + found[1];
-                   }
-                   found = row[3].match( /d\/([A-Za-z0-9\-_]+)/ );
+                }
+                found = row[3].match( /d\/([A-Za-z0-9\-_]+)/ );
                 if ( found&&found[1].length ) {
-                 row[3] = 'https://drive.google.com/uc?export=view&id=' + found[1];
+                    row[3] = 'https://drive.google.com/uc?export=view&id=' + found[1];
                 }
                 if(row[2])content.find('.card-cover').css("background-image", "url(" + row[2] + ")");
                 if(row[3])content.find('.card-avatar').attr('src',row[3]);
@@ -82,7 +82,7 @@ $.ajax({url: sf, type: 'GET', dataType: 'text'})
         const buttons = document.querySelectorAll(".profile-outer .card-buttons button");
         // const sections = document.querySelectorAll(".profile-outer .card-section");
         // const cards = document.querySelector(".profile-outer .card");
-        
+
         const handleButtonClick = (e) => {
             const targetSection = e.target.getAttribute("data-section");
             const card = e.target.closest('.card');
@@ -102,7 +102,7 @@ $.ajax({url: sf, type: 'GET', dataType: 'text'})
                 btn.addEventListener("click", handleButtonClick);
             });
         });
-        
+
     }
 })
 .fail((e) => console.log(e.status));
